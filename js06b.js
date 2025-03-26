@@ -10,7 +10,27 @@
       Filename: js06b.js
  */
 
+let subButton = document.getElementById("subButton");
 
+subButton.addEventListener("click", validateName);
+
+function validateCard(){
+   let card = document.forms.payment.elements.credit[0];
+   if (card.validity.valueMissing) {
+      card.setCustomValidity("select your credit card");
+   } else {
+      card.setCustomValidity("");
+   }
+}
+
+function validateName() {
+   let cardName = document.getElementById("cardName");
+   if (cardName.validity.valueMissing) {
+      cardName.setCustomValidity("Enter your name as it appears on the card");
+   } else {
+      cardName.setCustomValidity("");
+   }
+}
 
 
 
